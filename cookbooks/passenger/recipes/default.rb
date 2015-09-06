@@ -1,8 +1,4 @@
-#
-# Cookbook Name:: passenger
-# Recipe:: default
-#
-# Copyright 2015, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
+gem_package 'passenger' do
+  version '4.0.45'
+  action :install
+end
