@@ -1,0 +1,3 @@
+export <%="RBENV_ROOT=#{node['rbenv']['path']}"%>
+export <%="PATH=\"#{node['rbenv']['path']}/bin:$PATH\""%>
+eval "$(rbenv init -)"
