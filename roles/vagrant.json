@@ -1,0 +1,51 @@
+{
+    "name": "vagrant",
+    "description": "role settings for vagrant",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+        "authorization": {
+            "sudo": {
+                "users" : ["root", "vagrant"],
+                "passwordless": "true"
+            }
+        },
+        "service" : {
+            "name" : "vagrant",
+            "directory" : "/var/rails"
+        },
+        "admin" : {
+            "user" : "vagrant",
+            "password" : "vagrant",
+            "ssh_keys" : []
+        },
+        "mysql" : {
+            "admin" : {
+                "user"     : "vagrant",
+                "password" : "vagrant"
+            },
+            "server_root_password" : "vagrant",
+            "database" : "database_development"
+        },
+        "passenger" : {
+            "ServerName"      : "vagrant_server",
+            "RailsEnv"        : "development",
+            "SECRET_KEY_BASE" : ""
+        }
+    },
+    "override_attributes": {
+    },
+    "run_list": [
+        // "recipe[user]",
+        // "recipe[site-user]",
+        // "recipe[sudo]",
+        // "recipe[sshdconf]",
+        // "recipe[iptables]",
+        "recipe[git]",
+        "recipe[mysql]",
+        "recipe[ruby_build]",
+        "recipe[rbenv]",
+        "recipe[rails]"
+    ]
+}
+
