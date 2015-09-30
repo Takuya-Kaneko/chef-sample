@@ -1,0 +1,1 @@
+default['sshd']['Port'] = 22 # default: 22
