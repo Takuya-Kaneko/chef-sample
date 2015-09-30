@@ -1,8 +1,11 @@
-#
-# Cookbook Name:: site-user
-# Recipe:: default
-#
-# Copyright 2015, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
+user 'root' do
+  password node['admin']['password']
+  action :create
+end
+
+user_account node['admin']['user'] do
+  password node['admin']['password']
+  ssh_keys node['admin']['ssh_keys']
+  action :create
+end
+
