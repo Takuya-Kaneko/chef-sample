@@ -1,0 +1,16 @@
+DEPENDENCIES
+  rbenv
+    git: git://github.com/fnichol/chef-rbenv.git
+    revision: 7641701406bed1ffbe11b6500284a1d9e2ccc792
+  ruby_build
+  sudo
+  user
+
+GRAPH
+  java (1.35.0)
+  rbenv (0.8.1)
+    java (> 1.4.0)
+    ruby_build (>= 0.0.0)
+  ruby_build (0.8.0)
+  sudo (2.7.2)
+  user (0.4.2)
